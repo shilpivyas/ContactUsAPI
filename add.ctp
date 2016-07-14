@@ -18,6 +18,7 @@ use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
+use Cake\Routing\Router;
 
 $this->layout = false;
 
@@ -42,12 +43,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <script type="text/javascript">
         jQuery(document).ready(function(){
             jQuery('#submit_btn').click(function(){
-                alert('clciked');
                 jQuery.ajax({
-                    url:<?php echo $this->Url->build([
-                        "controller" => "Contacts",
-                        "action" => "add",
-                    ]); ?>
+                    url:"<?php echo Router::url('/', true) ?>contacts.json",
+                    type:"post",
+                    data: jQuery('#contact_us_form').serialize()
                 });
             });
         });
@@ -57,10 +56,20 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <div id="content"><div class="row">
     <h2>Contact Us</h2>
     <?php
-    echo $this->Form->create($contact);
-    echo $this->Form->input('name');
-    echo $this->Form->input('email');
-    echo $this->Form->input('body');
+    echo $this->Form->create('Contacts',[
+        'id' => 'contact_us_form'
+    ]);
+    echo $this->Form->input('name',[
+        'required' => true
+    ]);
+    echo $this->Form->input('email',[
+        'type'      => 'email',
+        'required'  => true
+    ]);
+    echo $this->Form->input('message',[
+        'rows'      => 5,
+        'required'  => true
+    ]);
     echo $this->Form->button('Submit',[
         'id'    => 'submit_btn',
         'type'  => 'button'

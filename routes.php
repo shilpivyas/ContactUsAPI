@@ -42,7 +42,14 @@ use Cake\Routing\Route\DashedRoute;
  *
  */
 Router::defaultRouteClass(DashedRoute::class);
-
+Router::scope('/', function ($routes) {
+    $routes->extensions(['json']);
+    $routes->resources('Contacts');
+});
+//Router::scope('/', function ($routes) {
+//    $routes->extensions(['json']);
+//    $routes->resources('Recipes');
+//});
 Router::scope('/', function (RouteBuilder $routes) {
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
@@ -55,6 +62,8 @@ Router::scope('/', function (RouteBuilder $routes) {
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+    
+    $routes->connect('/contact-us', ['controller' => 'Contacts', 'action' => 'add']);
 
     /**
      * Connect catchall routes for all controllers.
@@ -74,10 +83,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->fallbacks('DashedRoute');
 });
-Router::scope('/', function ($routes) {
-    $routes->extensions(['json']);
-    $routes->resources('Contacts');
-});
+
 
 /**
  * Load all plugin routes.  See the Plugin documentation on
