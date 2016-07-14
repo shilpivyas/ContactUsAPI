@@ -17,7 +17,6 @@ class ContactsController extends AppController
     {
         if($this->request->is('post')) {
             $contact= $this->Contacts->newEntity($this->request->data);
-            
             if ($this->Contacts->save($contact)) {
                 $message = 'Saved';
             } else {

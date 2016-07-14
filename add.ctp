@@ -46,7 +46,16 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 jQuery.ajax({
                     url:"<?php echo Router::url('/', true) ?>contacts.json",
                     type:"post",
-                    data: jQuery('#contact_us_form').serialize()
+                    data: jQuery('#contact_us_form').serialize(),
+					success: function(data) {
+						if(data.message == 'Saved') {
+						alert(data.message);
+							window.location="<?php echo Router::url(['controller' => 'pages','action' => 'home']) ?>";
+						}
+					},
+					error: function() {
+						alert('error');
+					}
                 });
             });
         });
