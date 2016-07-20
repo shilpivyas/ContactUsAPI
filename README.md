@@ -22,3 +22,6 @@ As per our discussion I have made the updates in the assignment.<br />
   port to 465,
   username to Email ID of the account through which you want to send mails,
   password to oassword of the above mentioned email account
+
+
+Download the zip and follow the above steps
