@@ -18,7 +18,7 @@ As per our discussion I have made the updates in the assignment.<br />
 3) List of messages sent with pagination. : Created a table that displays all the messages received with pagination. As for the API I have passed on messages received as JSon as well. The JSon response is paginated too, so you can access it like - <base_url>/contacts.json?page=2&sort=Contacts.id&direction=desc <br />
 4) Send email using smtp. : For this task you will have to make a few changes in app.php file (<project_name>/config/app.php). In EmailTransport update -<br />
   className to 'Smtp',
-  host => 'ssl://smtp.gmail.com',
-  port => 465,
-  username => Email ID of the account through which you want to send mails,
-  'password' => '***', <br />
+  host to 'ssl://smtp.gmail.com',
+  port to 465,
+  username to Email ID of the account through which you want to send mails,
+  password to oassword of the above mentioned email account
