@@ -12,8 +12,8 @@ I have uploaded the database
 Response for the API is also paginated, so to access response the URL would be like <base_url>/contacts.json?page=3&sort=Contacts.id&direction=desc
 4) Send email using smtp. as well, it's called test.sql. To use this database you'll have to make changes in app.php file (<project_name>/config/app.php). In this file in "Datasources" update your MySQL username, MySQL password and database name.
 
-As per our discussion I have made the updates in the assignment.
-1) Want ajax and server side validation. : Used jQuery Validate for client side validation
-2) Success message on top of form.
-3) List of messages sent with pagination. 
-4) Send email using smtp.
+As per our discussion I have made the updates in the assignment.<br />
+1) Want ajax and server side validation. : Used jQuery Validate for client side validation<br />
+2) Success message on top of form.<br />
+3) List of messages sent with pagination. : Created a table that displays all the messages received with pagination <br />
+4) Send email using smtp.<br />
