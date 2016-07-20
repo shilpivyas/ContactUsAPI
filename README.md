@@ -15,5 +15,5 @@ Response for the API is also paginated, so to access response the URL would be l
 As per our discussion I have made the updates in the assignment.<br />
 1) Want ajax and server side validation. : Used jQuery Validate for client side validation<br />
 2) Success message on top of form.<br />
-3) List of messages sent with pagination. : Created a table that displays all the messages received with pagination <br />
+3) List of messages sent with pagination. : Created a table that displays all the messages received with pagination. As for the API I have passed on messages received as JSon as well. The JSon response is paginated too, so you can access it like - <base_url>/contacts.json?page=2&sort=Contacts.id&direction=desc <br />
 4) Send email using smtp.<br />
